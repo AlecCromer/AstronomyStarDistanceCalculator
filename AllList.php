@@ -225,7 +225,7 @@ class TableRows extends RecursiveIteratorIterator {
 } 
 $servername = "localhost";
 $username = "root";
-$password = "cromer678";
+$password = "";
 $dbname = "astronomyproject";
 try {
 	$_statement = "SELECT * FROM starlist LIMIT 20000;";

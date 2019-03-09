@@ -58,7 +58,7 @@ function toRadians (angle) {
 
 <h1>Welcome to the Astronomy 1102 Database</h1>
 
-<p>Return to the main menu for another comparison</p>
+<p>Return to the <a href="index.php">main menu</a> for another comparison</p>
 
 <h2>This is a table featuring your star comparison</h2>
 <?php
@@ -86,7 +86,7 @@ class TableRows extends RecursiveIteratorIterator {
 } 
 $servername = "localhost";
 $username = "root";
-$password = "cromer678";
+$password = "";
 $dbname = "astronomyproject";
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
