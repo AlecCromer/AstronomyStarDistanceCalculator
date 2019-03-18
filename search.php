@@ -5,9 +5,9 @@
 function generateDistance(){
 	
 //takes data from table
-//DIS is distance
-//RA is right ascension
-//DEC is declination
+//DIS is distance in parsecs
+//RA is right ascension in decimal form EG: 16h 30' 0' = 16.5
+//DEC is declination in degrees
 var star1Name = document.getElementById("table").rows[1].cells[6].innerHTML;
 var RAStar1 = document.getElementById("table").rows[1].cells[7].innerHTML;
 var DECStar1 = document.getElementById("table").rows[1].cells[8].innerHTML;
