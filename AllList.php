@@ -199,6 +199,15 @@ Star Two Name: <input type="text" name="star2"><br>
 <input type="submit" name='submit'>
 </form>
 <h2>This is a table featuring 20000 stars, Otherwise Your Web Browser may crash</h2>
+<p>What page would you like to visit? (Stars separated into multiple pages to prevent the web browser from crashing)</p>
+<form action="ALLlist.php" method="post">
+<input type="SUBMIT" name="NEXTPAGE" value="1">
+<input type="SUBMIT" name="NEXTPAGE" value = "2">
+<input type="SUBMIT" name="NEXTPAGE" value="3">
+<input type="SUBMIT" name="NEXTPAGE" value="4">
+<input type="SUBMIT" name="NEXTPAGE" value="5">
+
+</form>
 <?php
 
 
