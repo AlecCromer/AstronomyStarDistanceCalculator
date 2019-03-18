@@ -4,10 +4,10 @@
 <script type="text/javascript">
 function generateDistance(){
 	
-	
-var text="";
-	
 //takes data from table
+//DIS is distance
+//RA is right ascension
+//DEC is declination
 var star1Name = document.getElementById("table").rows[1].cells[6].innerHTML;
 var RAStar1 = document.getElementById("table").rows[1].cells[7].innerHTML;
 var DECStar1 = document.getElementById("table").rows[1].cells[8].innerHTML;
@@ -16,9 +16,15 @@ var star2Name = document.getElementById("table").rows[2].cells[6].innerHTML;
 var RAStar2 = document.getElementById("table").rows[2].cells[7].innerHTML;
 var DECStar2 = document.getElementById("table").rows[2].cells[8].innerHTML;
 var DISStar2 = document.getElementById("table").rows[2].cells[9].innerHTML;
-text += "<p>The name of the first star is "+star1Name+"</p>";
-text += "<p>The name of the second star is "+star2Name+"</p>";
 
+
+//converts distance from parsecs to light years
+DISStar1 = DISStar1 *3.262;
+DISStar2 = DISStar2 *3.262;
+
+//converts RA decimal form to degrees
+RAStar1 = RAStar1 * 15;
+RAStar2 = RAStar2 * 15;
 
 //calculates the coordinates of star1
 var xStar1 = DISStar1 * Math.cos(toRadians(RAStar1)) * Math.cos(toRadians(DECStar1));
@@ -36,8 +42,10 @@ var dy = (yStar2 - yStar1);
 var dz = (zStar2 - zStar1);
 
 
-//calculates average distance in parsecs and multiply 3.262 to get light years
-var Distance = Math.floor(Math.sqrt(dx*dx + dy*dy + dz*dz)*3.262);
+//calculates average distance in light years
+var Distance = Math.floor(Math.sqrt(dx*dx + dy*dy + dz*dz));
+
+	//displays final calculated value
 	document.getElementById("comparison").innerHTML = "<p>The distance between "+star1Name +" and "+star2Name+ " is approximately "+ Distance + " lightyears.</p>";
 	document.getElementById("comparison").innerHTML += "<p>Or<p>";
 
@@ -58,7 +66,7 @@ function toRadians (angle) {
 
 <h1>Welcome to the Astronomy 1102 Database</h1>
 
-<p>Return to the <a href="index.php">main menu</a> for another comparison</p>
+<p>Return to the main menu for another comparison</p>
 
 <h2>This is a table featuring your star comparison</h2>
 <?php
@@ -86,7 +94,7 @@ class TableRows extends RecursiveIteratorIterator {
 } 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "cromer678";
 $dbname = "astronomyproject";
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
